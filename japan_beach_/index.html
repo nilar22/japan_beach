@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Japan Beach Staycation Guide | 日本ビーチ旅行ガイド</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wave-bg"></div>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">🌊</div>
+        <div>
+        <h1 id="titleText">Japan Beach Guide</h1>
+        <p id="subTitleText">日本のビーチ旅行ガイド</p>
+        </div>
+      </div>
+
+      <div class="hint" id="hint">
+        地図上の地域をクリックし、ビーチカードを選択すると、より詳細な地図とAgodaでの宿泊施設検索が表示されます。
+      </div>
+
+      <div class="region-info" id="regionDisplay">
+        <div class="empty-state">
+          <span>🗾</span>
+          <h3 class="beach-list-header" id="recommendHeader">地域を選択してください</h3>
+          <p class="beach-list-title" id="recommendTitle">
+おすすめのビーチと宿泊施設の詳細情報
+          </p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="top-bar">
+        <div>
+          <p class="eyebrow" id="mainEyebrow">インタラクティブな日本地図</p>
+          <h2 id="mainTitle">ビーチへの旅行や近隣の宿泊施設を探す</h2>
+         
+        </div>
+        <button class="theme-btn" onclick="toggleTheme()">
+  🔆 Day Mode
+</button>
+<button class="lang-btn" onclick="toggleLanguage()">
+EN
+</button>
+      </header>
+
+      <section class="content-grid">
+        <div class="map-panel">
+          <div class="map-title-row">
+            <div>
+              <h3 id="mapTitleJP">日本の地域</h3>
+
+              <h3 id="mapTitleEN">Japan Regions</h3>
+            </div>
+            <button class="clear-btn" id="resetBtn" onclick="resetView()">Reset</button>
+          </div>
+
+          <div class="map-wrap">
+            <svg class="japan-map" viewBox="0 0 720 900" role="img" aria-label="Clickable map of Japan regions">
+              <defs>
+                <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#06101f" flood-opacity="0.35"/>
+                </filter>
+              </defs>
+
+              <path class="sea-shape" d="M74 742 C132 616 105 510 194 392 C275 285 270 168 393 92 C506 22 649 78 665 236 C679 373 571 443 558 546 C542 673 653 733 560 827 C450 940 191 887 74 742Z"/>
+
+              <g filter="url(#softShadow)">
+                <path id="Hokkaido" class="region hokkaido" onclick="updateRegion('Hokkaido')" d="M476 36 C548 26 629 62 648 128 C666 192 628 251 562 254 C504 256 460 225 431 181 C399 132 412 58 476 36Z"/>
+                <path id="Tohoku" class="region tohoku" onclick="updateRegion('Tohoku')" d="M439 255 C491 237 548 258 563 311 C584 388 548 459 506 511 C470 556 417 540 399 491 C374 424 388 294 439 255Z"/>
+                <path id="Kanto" class="region kanto" onclick="updateRegion('Kanto')" d="M397 492 C434 501 477 530 491 575 C504 619 471 655 423 653 C375 651 342 616 345 568 C348 526 367 502 397 492Z"/>
+                <path id="Chubu" class="region chubu" onclick="updateRegion('Chubu')" d="M286 471 C328 430 379 435 406 484 C427 522 409 578 361 607 C311 637 249 614 229 565 C211 520 244 511 286 471Z"/>
+                <path id="Kansai" class="region kansai" onclick="updateRegion('Kansai')" d="M210 568 C246 546 301 559 319 598 C340 644 301 688 249 680 C202 673 174 614 210 568Z"/>
+                <path id="Chugoku" class="region chugoku" onclick="updateRegion('Chugoku')" d="M77 583 C123 543 192 537 224 576 C250 609 227 649 171 658 C113 668 56 632 77 583Z"/>
+                <path id="Shikoku" class="region shikoku" onclick="updateRegion('Shikoku')" d="M141 690 C193 665 252 675 268 711 C283 744 237 776 181 764 C133 754 103 715 141 690Z"/>
+                <path id="Kyushu" class="region kyushu" onclick="updateRegion('Kyushu')" d="M54 687 C108 671 153 708 150 764 C147 830 90 877 39 844 C-5 816 6 704 54 687Z"/>
+              </g>
+
+              <g class="map-labels">
+              <text id="labelHokkaido" x="532" y="152">北海道</text>
+              <text id="labelTohoku" x="480" y="390">東北</text>
+              <text id="labelKanto" x="407" y="587">関東</text>
+              <text id="labelChubu" x="305" y="552">中部</text>
+              <text id="labelKansai" x="236" y="631">関西</text>
+              <text id="labelChugoku" x="137" y="618">中国</text>
+              <text id="labelShikoku" x="185" y="729">四国</text>
+              <text id="labelKyushu" x="74" y="772">九州</text> 
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <section class="chatbot-window">
+          <div class="chat-header">
+            <span>🌤 AIチャットボット</span>
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div class="bot-msg">まず地域を選んでください。</div>
+            <div class="chat-options" id="chatOptions"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
