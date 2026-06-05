@@ -4,7 +4,7 @@
 # 🌊 Japan Beach Guide | 日本ビーチガイド
 
 > Interactive web app to discover Japan's best beaches and nearby accommodations by using recommendations
-
+![image](https://github.com/user-attachments/assets/preview.png)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Languages](https://img.shields.io/badge/languages-EN%2FJP-brightblue)
 ![image](https://github.com/nilar22/japan_beach/tree/main/japan_beach_/preview.png)
