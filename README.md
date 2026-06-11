@@ -7,6 +7,7 @@
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Languages](https://img.shields.io/badge/languages-EN%2FJP-brightblue)
 ![Japan Beach Guide](https://raw.githubusercontent.com/nilar22/japan_beach/main/japan_beach_/preview.png)
+> [Visit Website](https://japan-beaches.vercel.app)
 #What is This? 
 
 **Japan Beach Guide** is an interactive web application that helps you find the perfect beach in Japan based on your preferences! 
